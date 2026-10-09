@@ -1,4 +1,4 @@
-import LinkCard from "@/components/LinkCard";
+import LinkList from "@/components/LinkList";
 import Profile from "@/components/Profile";
 import { links, profile } from "@/data/profile";
 
@@ -21,17 +21,7 @@ export default function Home() {
           bio={profile.bio}
           imageUrl={profile.imageUrl}
         />
-        <ul className="mt-12 flex w-full flex-col gap-4">
-          {links.map((link) => (
-            <li key={link.id}>
-              <LinkCard
-                title={link.title}
-                url={link.url}
-                emoji={link.emoji}
-              />
-            </li>
-          ))}
-        </ul>
+        <LinkList links={links} />
       </main>
     </div>
   );
